@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useAxios from "../hooks/useAxios";
 import Coina from "./Coina";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Trendings = () => {
-  const [trendingCoins, setTrendingCoins] = useState([]);
-
-  useEffect(() => {
-    const fetchTrendingCoins = async () => {
-      try {
-        const response = await fetch("https://api.coingecko.com/api/v3/search/trending");
-        const data = await response.json();
-        setTrendingCoins(data.coins);
-      } catch (error) {
-        console.error("Error fetching trending coins:", error);
-      }
-    };
-
-    fetchTrendingCoins();
-  }, []);
+const Footer = () => {
+  // Fetching market data for coins using the useAxios
+  const { response, loading, error } = useAxios(
+    `coins/trending?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`
+  );
 
   const settings = {
     infinite: true,
@@ -53,17 +42,26 @@ const Trendings = () => {
   };
 
   return (
-    <div className="Markets-container">
-      <h1>Trending</h1>
-      <Slider {...settings}>
-        {trendingCoins.map((coin) => (
-          <div key={coin.item.id} className="w-full px-2">
-            <Coina coin={coin.item} />
-          </div>
-        ))}
-      </Slider>
+    <div>
+      <h1 className="text-black text-xl font-bold mt-2">Trending Coins</h1>
+      <div className="Markets-container">
+      {error && <div></div>}
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <Slider {...settings}>
+          {response &&
+            response.map((coin) => (
+              <div key={coin.id}>
+                <Coina coin={coin} />
+              </div>
+            ))}
+        </Slider>
+      )}
     </div>
+    </div>
+    
   );
 };
 
-export default Trendings;
+export default Footer;

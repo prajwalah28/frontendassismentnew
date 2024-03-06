@@ -1,7 +1,9 @@
+import img1 from '../assets/image.png';
+import img2 from '../assets/img2.png';
 export default function About() {
     return (
-      <div>
-        <section className="rounded-lg bg-white border-[1px] border-solid border-gray-500">
+      <div className="ml-3 mr-10 w-2/3 h-100">
+        <section className="rounded-lg bg-white ">
           <div className="flex flex-row items-start justify-start">
             <h2 className="text-5xl text-black font-semibold">About Bitcoin</h2>
           </div>
@@ -47,8 +49,8 @@ export default function About() {
           <div>
             <h1>Already Holding Bitcoin?</h1>
             <div style={{ display: 'flex' }}>
-      <img src="image1.jpg" alt="Image 1" style={{ marginRight: '10px' }} />
-      <img src="image2.jpg" alt="Image 2" />
+      <img  className="w-90 h-40" src={img1} alt="Image 1" style={{ marginRight: '10px' }} />
+      <img  className="w-90 h-40" src={img2} alt="Image 2" />
     </div>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem porro at, nihil dolorem, itaque tempore, ad quasi beatae distinctio eaque vitae asperiores illo ab facilis dolorum. Vero quasi harum iste repellendus eos nulla voluptatum animi saepe asperiores itaque facere accusantium quo ducimus, repudiandae beatae ut corporis optio, eum minima ullam.</p>
           </div>

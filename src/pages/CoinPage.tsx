@@ -3,13 +3,14 @@ import CradsPromo from "../components/CradsPromo";
 import Crypto from "../components/Crypto";
 import Footer from "../components/Footer";
 import PageHolder from "../components/PageHolder";
+import Percentage from "../components/Percentage";
 import PerformanceSection from "../components/PerformanceSection";
 import Sentiment from "../components/Sentiment";
 import Team from "../components/Team";
 import ToggleSection from "../components/ToggleSection";
 import Tokenomics from "../components/Tokenomics";
 import TrendingCoins from "../components/TrendingCoins";
-import Trendings from "../components/Trendings";
+import Trendings from "../components/Trendings.tsx";
 
 function CoinPage() {
   return (
@@ -28,11 +29,14 @@ function CoinPage() {
         </div>
       </div>
       <Sentiment/>
+      <Percentage/>
       <About/>
-      <Tokenomics/>
+      
+       <Tokenomics/>
        <Team/>
-      <Footer/>
-      <Trendings/>
+       <Footer/>
+         <Trendings/>
+      
     </div>
   );
 }
