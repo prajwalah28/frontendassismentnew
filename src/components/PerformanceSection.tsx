@@ -62,70 +62,69 @@ const Table = () => {
   };
 
   return (
-
     <div className="Markets-container bg-gray-100 py-8">
       <div className="text-2xl font-semibold text-[#0F1629]">Performance</div>
-        <div className="py-4 mt-2">
-          <div className="flex justify-between ">
-            <div className="text-start">
-              <div className="text-sm text-[#44475B] font-normal p-1">
-                Today’s Low
-              </div>
-              <div className="text-[#44475B] text-lg font-medium p-1">
-                46,930.22
-              </div>
+      <div className="py-4 mt-2">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="text-start">
+            <div className="text-sm text-[#44475B] font-normal p-1">
+              Today’s Low
             </div>
-            <div className="w-[500px] h-2">
-              <div className="bg-gradient-to-r from-red-500 via-orange-500 to-green-500 h-full rounded-2xl mt-7"></div>
-              <div className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-4">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="w-3 fill-current text-black ml-7"
-                >
-                  <polygon points="0,100 50,0 100,100" />
-                </svg>
-                <span className="text-[#44475B] text-sm font-normal">
-                  $47,137.83
-                </span>
-              </div>
-            </div>
-            <div className="text-end">
-              <div className="text-sm text-[#44475B] font-normal p-1 ">
-                Today’s High
-              </div>
-              <div className="text-[#44475B] text-lg font-medium p-1">
-                49,343.83
-              </div>
+            <div className="text-[#44475B] text-lg font-medium p-1">
+              46,930.22
             </div>
           </div>
-          <div className="flex justify-between  mt-5">
-            <div className="text-start">
-              <div className="text-sm text-[#44475B] font-normal p-1">
-                52W Low
-              </div>
-              <div className="text-[#44475B] text-lg font-medium p-1">
-                16,930.22{" "}
-              </div>
+          <div className="w-[500px] h-2">
+            <div className="bg-gradient-to-r from-red-500 via-orange-500 to-green-500 h-full rounded-2xl mt-7"></div>
+            <div className="relative top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-4">
+              <svg
+                viewBox="0 0 100 100"
+                className="w-3 fill-current text-black ml-7"
+              >
+                <polygon points="0,100 50,0 100,100" />
+              </svg>
+              <span className="text-[#44475B] text-sm font-normal">
+                $47,137.83
+              </span>
             </div>
-            <div className="w-[500px] h-2">
-              <div className="bg-gradient-to-r from-red-500 via-orange-500 to-green-500 h-full rounded-2xl mt-7"></div>
+          </div>
+          <div className="text-end">
+            <div className="text-sm text-[#44475B] font-normal p-1 ">
+              Today’s High
             </div>
-            <div className="text-end">
-              <div className="text-sm text-[#44475B] font-normal p-1">
-                52W High{" "}
-              </div>
-              <div className="text-[#44475B] text-lg font-medium p-1">
-                49,743.83{" "}
-              </div>
+            <div className="text-[#44475B] text-lg font-medium p-1">
+              49,343.83
             </div>
           </div>
         </div>
+        <div className="flex flex-col md:flex-row justify-between  mt-5">
+          <div className="text-start">
+            <div className="text-sm text-[#44475B] font-normal p-1">
+              52W Low
+            </div>
+            <div className="text-[#44475B] text-lg font-medium p-1">
+              16,930.22{" "}
+            </div>
+          </div>
+          <div className="w-[500px] h-2">
+            <div className="bg-gradient-to-r from-red-500 via-orange-500 to-green-500 h-full rounded-2xl mt-7"></div>
+          </div>
+          <div className="text-end">
+            <div className="text-sm text-[#44475B] font-normal p-1">
+              52W High{" "}
+            </div>
+            <div className="text-[#44475B] text-lg font-medium p-1">
+              49,743.83{" "}
+            </div>
+          </div>
+        </div>
+      </div>
 
       <h2 className="text-2xl font-bold text-center mb-4">Markets</h2>
       <div className="Markets-wrapper-container max-w-screen-lg mx-auto">
-        <div style={{ display: 'flex' }}>
-          <div>
-            <table className="w-full mb-8">
+        <div className="flex flex-col md:flex-row">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0">
+            <table className="w-full">
               <tbody>
                 {Object.entries(attributesGroup1).map(([key, value]) => (
                   <tr key={key} className="border-b">
@@ -136,7 +135,7 @@ const Table = () => {
               </tbody>
             </table>
           </div>
-          <div>
+          <div className="w-full md:w-1/2">
             <table className="w-full">
               <tbody>
                 {Object.entries(attributesGroup2).map(([key, value]) => (

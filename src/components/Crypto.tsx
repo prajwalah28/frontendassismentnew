@@ -34,7 +34,7 @@ function Crypto(): JSX.Element {
 
   return (
     <div className="bg-white h-max rounded-lg my-4 p-6">
-      <div className="flex items-center">
+      <div className="flex   items-center sm:flex-row">
         <div>
           <img src={img} className="w-9" alt="Bitcoin" />
         </div>
@@ -42,11 +42,11 @@ function Crypto(): JSX.Element {
           Bitcoin
         </div>
         <div className="text-sm text-[#5D667B] pl-2">BTC</div>
-        <div className="bg-[#808A9D] px-3 py-2 text-white rounded-xl ml-7">
+        <div className="bg-[#808A9D] px-3 py-2 text-white rounded-xl ml-0 sm:ml-7 mt-4 sm:mt-0">
           Rank #1
         </div>
       </div>
-      <div className="mt-8 flex">
+      <div className="mt-8 flex flex-row sm:flex-row items-center">
         <div>
           <div className="text-3xl font-semibold text-[#0B1426]">
             {(cryptoData && `$${cryptoData.usd}`) || `$66759`}
@@ -55,7 +55,7 @@ function Crypto(): JSX.Element {
             {(cryptoData && `₹ ${cryptoData.inr}`) || `₹ 5535287`}
           </div>
         </div>
-        <div className="flex items-center justify-center bg-green-300/20 rounded-lg p-2 h-10 ml-10">
+        <div className="flex items-center justify-center bg-green-300/20 rounded-lg p-2 h-10 mt-4 ">
           <svg
             viewBox="0 0 100 100"
             className="w-4 fill-current text-green-600"
@@ -67,11 +67,11 @@ function Crypto(): JSX.Element {
               `2.18%`}
           </span>
         </div>
-        <div className="text-sm text-[#768396] ml-2 mt-2">(24H)</div>
+        <div className="text-sm text-[#768396] mt-2 ml-0 sm:ml-2">(24H)</div>
       </div>
       <hr className="my-4" />
-      <div className="flex mb-4 justify-between">
-        <div className="text-lg font-semibold text-[#0B1426]">
+      <div className="flex mb-4 justify-between flex-col sm:flex-row">
+        <div className="text-lg font-semibold text-[#0B1426] mb-4 sm:mb-0">
           Bitcoin Price Chart (USD)
         </div>
         <div className="flex space-x-5 mr-4 text-sm text-[#5D667B] font-medium text-center items-center">

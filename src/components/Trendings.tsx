@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 const Footer = () => {
   // Fetching market data for coins using the useAxios
   const { response, loading, error } = useAxios(
-    `coins/trending?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`
+    `coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`
   );
 
   const settings = {

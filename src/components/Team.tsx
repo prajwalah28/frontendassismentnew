@@ -33,8 +33,8 @@ const Team: React.FC = () => {
         <div className='gap-4 ml-5 mt-5'>
     
     <div className='flex-col pl-8'>
-        <div className='flex bg-blue-200 pl-5 pr-5 pt-5 pb-5 w-fit rounded-lg'>
-            <div> <img src={image} className='w-24 rounded-lg pl-'/>
+        <div className='flex flex-col md:flex-row bg-blue-200 pl-5 pr-5 pt-5 pb-5 w-fit rounded-lg'>
+            <div className='ml-16'> <img src={image} className='w-24 rounded-lg pl-'/>
                 <h2 className='pl-2'>{teamMembers[0].name}</h2>
                 <p className='text-sm'>{teamMembers[0].designation}</p>
             </div>
@@ -45,8 +45,8 @@ const Team: React.FC = () => {
         amet. At metus orci augue fusce eleifend  </p>
             </div>
         </div>
-        <div className='flex bg-blue-200 pl-5 pr-5 pt-5 pb-5 w-fit rounded-lg mt-8'>
-        <div> <img src={image} className='w-24 rounded-lg'/>
+        <div className='flex  flex-col md:flex-row bg-blue-200 pl-5 pr-5 pt-5 pb-5 w-fit rounded-lg mt-8'>
+        <div className='ml-16'> <img src={image} className='w-24 rounded-lg'/>
               <h2>{teamMembers[1].name}</h2>
               <p className='text-sm'>{teamMembers[1].designation}</p>
                 </div>
@@ -56,8 +56,8 @@ const Team: React.FC = () => {
         amet. At metus orci augue fusce eleifend .</p>
             </div>
         </div>
-        <div className='flex bg-blue-200 pl-5 pr-5 pt-5 pb-5 w-fit rounded-lg mt-8'>
-        <div> <img src={image} className='w-24 rounded-lg'/>
+        <div className='flex flex-col md:flex-row bg-blue-200 pl-5 pr-5 pt-5 pb-5 w-fit rounded-lg mt-8'>
+        <div className='ml-16' > <img src={image} className='w-24 rounded-lg'/>
         <h2 className='pl-2'>{teamMembers[2].name}</h2>
             <p className='text-sm'>{teamMembers[2].designation}</p>
         </div>

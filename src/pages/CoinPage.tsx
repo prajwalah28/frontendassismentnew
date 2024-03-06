@@ -11,8 +11,25 @@ import ToggleSection from "../components/ToggleSection";
 import Tokenomics from "../components/Tokenomics";
 import TrendingCoins from "../components/TrendingCoins";
 import Trendings from "../components/Trendings.tsx";
+import { useState, useEffect } from 'react';
 
 function CoinPage() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Adjust breakpoint as per your design
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Initial check on load
+    handleResize();
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div className="h-full w-screen bg-slate-200/40">
       <PageHolder />
@@ -23,19 +40,34 @@ function CoinPage() {
           <ToggleSection />
           <PerformanceSection />
         </div>
-        <div className="w-4/12 mr-14">
-          <CradsPromo />
-          <TrendingCoins />
-        </div>
+        {!isMobile && (
+          <div className="w-4/12 mr-14">
+            <div className="">
+              <CradsPromo />
+            </div>
+            <div className="">
+              <TrendingCoins />
+            </div>
+          </div>
+        )}
       </div>
-      <Sentiment/>
-      <Percentage/>
-      <About/>
-      
-       <Tokenomics/>
-       <Team/>
-       <Footer/>
-         <Trendings/>
+      <Sentiment />
+      <Percentage />
+      <About />
+      {!isMobile && <Tokenomics />}
+      <Team />
+      <Footer />
+      <Trendings />
+      {isMobile && (
+        <div className="w-full flex flex-col justify-between">
+          <div className="w-8/12">
+            <CradsPromo />
+          </div>
+          <div className="w-10/12">
+            <TrendingCoins />
+          </div>
+        </div>
+      )}
       
     </div>
   );
